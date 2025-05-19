@@ -25,6 +25,9 @@ def project_page():
                 h1 {
                     color: #2c3e50;
                 }
+                h2 {
+                    color: #16a085;
+                }
                 p {
                     font-size: 18px;
                 }
@@ -32,6 +35,12 @@ def project_page():
                     color: #2980b9;
                     text-decoration: none;
                     font-weight: bold;
+                }
+                .update {
+                    margin-top: 30px;
+                    padding: 20px;
+                    background-color: #eafaf1;
+                    border-left: 5px solid #27ae60;
                 }
             </style>
         </head>
@@ -42,6 +51,12 @@ def project_page():
                 <p>🌐 <a href="http://app-may2025-alb-1887390314.ca-central-1.elb.amazonaws.com/" target="_blank">Live Demo</a></p>
                 <p>👤 Author: Nikita Butakov</p>
                 <p>📅 Date: 19 May 2025</p>
+
+                <div class="update">
+                    <h2>✅ Update #1: CI/CD Test</h2>
+                    <p>This page was automatically updated using GitHub Actions 🎉</p>
+                    <p>New deployment: 19 May 2025, evening</p>
+                </div>
             </div>
         </body>
     </html>
