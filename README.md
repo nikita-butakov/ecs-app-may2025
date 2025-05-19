@@ -8,11 +8,11 @@ Hi! I’m **Nikita**, a DevOps Engineer, and this is my personal project where I
 
 ## 🧰 Technologies Used
 
-- 🐍 **Python + Flask** — for a simple REST-style web application  
-- 🐳 **Docker** — to containerize the app  
+- 🐍 **Python + Flask** — simple REST-style web application  
+- 🐳 **Docker** — for containerization  
 - 📦 **Amazon ECR** — to store Docker images  
 - ☁️ **Amazon ECS Fargate** — for serverless container deployment  
-- 🤖 **GitHub Actions** — for continuous integration and deployment (CI/CD)
+- 🤖 **GitHub Actions** — for continuous integration & delivery
 
 ---
 
@@ -20,22 +20,22 @@ Hi! I’m **Nikita**, a DevOps Engineer, and this is my personal project where I
 
 When deployed, the app renders a simple HTML page showing project info.
 
-- The logic is in `app.py`, which uses **Flask** to serve HTML
-- The styling is included directly in the response (for simplicity)
+- The logic is in `app.py`, which uses **Flask** to serve HTML  
+- Styling is included inline for simplicity
 
 ---
 
 ## 🛠️ Steps I Followed
 
-1. ✅ Created a basic Python web application (`app.py`)
-2. 📝 Wrote a `Dockerfile` to containerize the app
-3. 🗂️ Created an Amazon **ECR** repository for storing the image
-4. ⚙️ Set up **GitHub Actions** workflow (`.github/workflows/deploy.yml`)
-5. 🔐 Configured GitHub Secrets (AWS credentials, region, ECR repo info)
-6. 📤 Pushed Docker image to ECR automatically from GitHub Actions
-7. ☁️ Created an **ECS Fargate** cluster and task definition
-8. 📦 Deployed a **Service** in ECS using the task
-9. 🌐 Attached an **Application Load Balancer (ALB)**
+1. ✅ Created a basic Python web application (`app.py`)  
+2. 📝 Wrote a `Dockerfile` to containerize the app  
+3. 🗂️ Created an Amazon **ECR** repository to host the image  
+4. ⚙️ Set up **GitHub Actions** workflow (`.github/workflows/deploy.yml`)  
+5. 🔐 Configured GitHub Secrets (AWS credentials, region, ECR repo info)  
+6. 📤 Pushed the Docker image to ECR automatically via CI/CD  
+7. ☁️ Created an **ECS Fargate** cluster and task definition  
+8. 📦 Launched a **Service** in ECS using the task  
+9. 🌐 Attached an **Application Load Balancer (ALB)**  
 10. 🔎 Accessed the app via public ALB URL
 
 ---
@@ -44,49 +44,50 @@ When deployed, the app renders a simple HTML page showing project info.
 
 ### ✅ Initial Deployment
 
-After a successful CI/CD run in GitHub Actions, the new container was deployed. I opened the **ALB URL** in the browser and saw my project page.
+After the first successful CI/CD run in GitHub Actions, the new container was deployed. I opened the **ALB URL** in the browser and saw my project page:
 
-🖼️ _Screenshot 1_
-
----
-
-### 🧪 Testing Update via CI/CD
-
-I changed the `app.py` file and committed the update. GitHub Actions ran the pipeline again:
-
-- A **new container** was launched in ECS  
-- The **old one was stopped automatically** — zero downtime!
-
-🖼️ _Screenshot 2_
+<img src="https://github.com/nikita-butakov/ecs-app-may2025/blob/main/demo_screenshots/main_page.JPG?raw=true" alt="Main Page" width="800"/>
 
 ---
 
-### 📄 Verified Update
+### 🧪 Testing CI/CD Update
 
-I checked the ALB URL again, and the **new content** was visible. Everything worked as expected.
+I updated the `app.py` file and pushed the changes to GitHub. CI/CD was triggered:
 
-🖼️ _Screenshot 3_
+- ✅ A **new container** was deployed automatically  
+- ❌ The **old container** was stopped — with zero downtime
+
+<img src="https://github.com/nikita-butakov/ecs-app-may2025/blob/main/demo_screenshots/new_container_task.JPG?raw=true" alt="New ECS Task" width="800"/>
 
 ---
 
-### 🔄 AWS Components
+### 📄 Verified the Update
 
-- **Application Load Balancer view in AWS:**
+I checked the ALB URL again — the updated content was live!
 
-🖼️ _Screenshot 4_
+<img src="https://github.com/nikita-butakov/ecs-app-may2025/blob/main/demo_screenshots/main_page_updated.JPG?raw=true" alt="Updated Main Page" width="800"/>
 
-- **ECS Cluster & Fargate service view:**
+---
 
-🖼️ _Screenshot 5_
+### 🖥️ AWS Views
+
+**Application Load Balancer:**
+
+<img src="https://github.com/nikita-butakov/ecs-app-may2025/blob/main/demo_screenshots/alb.JPG?raw=true" alt="ALB Screenshot" width="800"/>
+
+**ECS Cluster & Fargate Service:**
+
+<img src="https://github.com/nikita-butakov/ecs-app-may2025/blob/main/demo_screenshots/ecs_cluster.JPG?raw=true" alt="ECS Cluster" width="800"/>
 
 ---
 
 ## 👤 Author
 
 **Nikita Butakov**  
-DevOps | Cloud | Automation  
-🔗 [LinkedIn](https://linkedin.com/in/nikitabutakov)  
-🐙 [GitHub](https://github.com/nikitabutakov)
+DevOps • Cloud • Automation  
+
+- 🔗 [LinkedIn](https://linkedin.com/in/nikitabutakov)  
+- 🐙 [GitHub](https://github.com/nikitabutakov)
 
 ---
 
@@ -96,6 +97,5 @@ DevOps | Cloud | Automation
 
 ---
 
-Thanks for reading! 🙌  
-
+Thanks for reading! 🙌
 
