@@ -40,6 +40,24 @@ When deployed, the app renders a simple HTML page showing project info.
 
 ---
 
+## 🔐 GitHub Secrets Used
+
+For secure CI/CD automation, the following **GitHub Secrets** were configured:
+
+| Secret Name             | Description                                  |
+|-------------------------|----------------------------------------------|
+| `AWS_ACCESS_KEY_ID`     | IAM user's access key for AWS CLI            |
+| `AWS_SECRET_ACCESS_KEY` | IAM user's secret access key                 |
+| `AWS_REGION`            | AWS region where services are deployed       |
+| `ECR_REGISTRY`          | Amazon ECR registry URI                      |
+| `ECR_REPOSITORY`        | Name of the ECR repository                   |
+| `ECS_CLUSTER_NAME`      | Name of the ECS cluster                      |
+| `ECS_SERVICE_NAME`      | Name of the ECS service to update            |
+
+> These secrets are referenced in the GitHub Actions workflow for authentication, image push, and ECS deployment.
+
+---
+
 ## 📸 Demo Screenshots
 
 ### ✅ Initial Deployment
@@ -98,4 +116,3 @@ DevOps • Cloud • Automation
 ---
 
 Thanks for reading! 🙌
-
